@@ -13,4 +13,30 @@ const index = async ctx => {
     }
 }
 
-module.exports = {index};
+const get = async ctx => {
+    // try{
+        const {id} = ctx.params;
+        const beer = await knex('beer').select().where({id});
+
+        if(!beer.length){
+            ctx.status=404;
+            ctx.body = {
+                data: beer,
+            };
+        }else{
+            ctx.body = {
+                data: beer,
+            };
+        }
+
+        
+    // }catch (error){
+    //     ctx.status = 404;
+    //     ctx.body = {
+    //         data: beers,
+    //     };
+    //     console.error(error);
+    // }
+}
+
+module.exports = {index,get};
