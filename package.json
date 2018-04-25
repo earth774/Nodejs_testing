@@ -17,6 +17,7 @@
     "eslint-config-google": "^0.9.1",
     "eslint-config-strongloop": "^2.1.0",
     "mocha": "^5.1.1",
+    "nyc": "^11.7.1",
     "sqlite3": "^4.0.0"
   },
   "dependencies": {
